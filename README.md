@@ -37,7 +37,7 @@ We just add the lenses together:
 
 (def xy-lens (ladd x-lens y-lens))
 ```
-And here is the test code:
+And here are some more tests:
 
 ```
 (println (lset xy-lens nil 5))
