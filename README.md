@@ -49,7 +49,7 @@ And here is the test code:
 
 ## Write your own lenses
 
-A lens is nothing more than a record with getter and setter functions as values:
+A dewdrop lens is nothing more than a record with getter and setter functions as values:
 
 ```
 (defrecord lens [getter setter])
