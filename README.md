@@ -64,7 +64,7 @@ Here is the key-lens function we used above for accessing maps:
     (fn [d] (get d k))
     (fn [d v] (assoc d k v))))
 ```
-Rounding thing out then, are the lget, lset, lupdate and ladd functions:
+Rounding things out then, are the lget, lset, lupdate and ladd functions:
 
 ```
 (defn lget [^lens l data]
