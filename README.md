@@ -11,7 +11,7 @@ You would define the lens like this:
 ```
 (def x-lens (key-lens :x))
 ```
-Here is some sample tests:
+Here are some sample tests:
 
 ```
 (println (lset x-lens {} 5))
