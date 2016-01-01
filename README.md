@@ -1,6 +1,8 @@
 # dewdrop
 Simple Clojure Lenses
 
+[![Clojars Project](https://img.shields.io/clojars/v/dewdrop.svg)](https://clojars.org/dewdrop)
+
 A lens lets you operate on part of a structure.
 
 Lets say you have a map and you want to operate on the value of :x.
