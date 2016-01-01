@@ -19,3 +19,22 @@ Here is some sample tests:
 (println (lupdate x-lens {:x 5 :y 6}
                   (fn [old] (* 2 old))))
 ```
+Now lets create a second lens for operating on the value of :y in a map:
+
+```
+(def y-lens (key-lens :y))
+```
+But what if the value of :y is found in the map which :x holds?
+We just add the lenses together:
+```
+
+(def xy-lens (ladd x-lens y-lens))
+```
+And here is the test code:
+
+```
+(println (lset xy-lens nil 5))
+(println (lget xy-lens {:x {:y 5 :z 3}}))
+(println (lupdate xy-lens {:x {:y 5 :z 3}}
+                  (fn [old] (* 2 old))))
+```
