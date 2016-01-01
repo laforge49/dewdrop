@@ -1,7 +1,15 @@
 (ns dewdrop.core-test
   (:require [clojure.test :refer :all]
-            [dewdrop.core :refer :all]))
+            [dewdrop.core :refer :all])
+  (:import [dewdrop.core lens]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(def x-lens (key-lens :x))
+(println (lset x-lens {} 5))
+(println (lget x-lens {:x 5 :y 6}))
+(println (lget x-lens {}))
+(println (lset x-lens nil 5))
+
+(def y-lens (key-lens :y))
+(def xy-lens (ladd x-lens y-lens))
+(println (lset xy-lens nil 5))
+(println (lget xy-lens {:x {:y 5 :z 3}}))
